@@ -1,16 +1,10 @@
 {
-  "name": "adamstipak/webpay-php",
+  "name": "glami/webpay-php",
   "description": "GP Webpay API Wrapper",
   "type": "library",
   "keywords": ["webpay", "php"],
   "license": "MIT",
-  "homepage": "https://github.com/newPOPE/webpay-php",
-  "authors": [
-    {
-      "name": "Adam Štipák",
-      "homepage": "http://newpope.org"
-    }
-  ],
+  "homepage": "https://github.com/glami/gp-webpay-php-sdk",
   "autoload": {
     "psr-0": { "AdamStipak\\Webpay": "src/" }
   },
