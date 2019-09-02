@@ -1,11 +1,11 @@
 <?php
 
-namespace AdamStipak\Webpay;
+namespace Glami\Webpay;
 
 class ApiTest extends \PHPUnit_Framework_TestCase {
 
   public function testVerifyPaymentResponse() {
-    $response = $this->getMockBuilder('AdamStipak\Webpay\PaymentResponse')
+    $response = $this->getMockBuilder('Glami\Webpay\PaymentResponse')
       ->setConstructorArgs(
         [
           'operation',
@@ -29,7 +29,7 @@ class ApiTest extends \PHPUnit_Framework_TestCase {
       ->method('hasError')
       ->willReturn(false);
 
-    $signer = $this->getMockBuilder('AdamStipak\\Webpay\\Signer')
+    $signer = $this->getMockBuilder('Glami\\Webpay\\Signer')
       ->disableOriginalConstructor()
       ->setMethods(
         [
@@ -47,7 +47,7 @@ class ApiTest extends \PHPUnit_Framework_TestCase {
   }
 
   /**
-   * @expectedException \AdamStipak\Webpay\PaymentResponseException
+   * @expectedException \Glami\Webpay\PaymentResponseException
    */
   public function testPaymentHasErrorInVerifyPaymentResponse() {
     $merchantNumber = 123456789;

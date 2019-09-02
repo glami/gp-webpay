@@ -1,6 +1,6 @@
 <?php
 
-namespace AdamStipak\Webpay;
+namespace Glami\Webpay;
 
 class Api {
 
@@ -36,7 +36,7 @@ class Api {
   }
 
   /**
-   * @param \AdamStipak\Webpay\PaymentRequest $request
+   * @param \Glami\Webpay\PaymentRequest $request
    * @return array
    */
   public function createPaymentParam(PaymentRequest $request) {

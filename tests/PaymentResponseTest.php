@@ -1,6 +1,6 @@
 <?php
 
-namespace AdamStipak\Webpay;
+namespace Glami\Webpay;
 
 class PaymentResponseTest extends \PHPUnit_Framework_TestCase {
 

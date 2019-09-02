@@ -1,6 +1,6 @@
 <?php
 
-namespace AdamStipak\Webpay;
+namespace Glami\Webpay;
 
 class PaymentResponseException extends Exception {
 
