@@ -14,16 +14,16 @@ $ composer require Glami/webpay-php dev-master
 ## Setup
 
 ```php
-$signer = new \Glami\Webpay\Signer(
+$signer = new \Glami\GpWebpay\Signer(
   $privateKeyFilepath,    // Path of private key.
   $privateKeyPassword,    // Password for private key.
   $publicKeyFilepath      // Path of public key.
 );
     
-$api = new \Glami\Webpay\Api(
+$api = new \Glami\GpWebpay\Api(
   $merchantNumber,    // Merchant number.
   $webpayUrl,         // URL of webpay.
-  $signer             // instance of \Glami\Webpay\Signer.
+  $signer             // instance of \Glami\GpWebpay\Signer.
 );
 
 ```
@@ -33,11 +33,11 @@ $api = new \Glami\Webpay\Api(
 ### Create payment url
 
  ```php
- use \Glami\Webpay\PaymentRequest;
+ use \Glami\GpWebpay\PaymentRequest;
  
  $request = new PaymentRequest(...);
  
- $url = $api->createPaymentRequestUrl($request); // $api instance of \Glami\Webpay\Api
+ $url = $api->createPaymentRequestUrl($request); // $api instance of \Glami\GpWebpay\Api
  
  // use $url as you want. In most cases for redirecting to GP Webpay.
  
@@ -46,8 +46,8 @@ $api = new \Glami\Webpay\Api(
 ### Verify payment response
  
 ```php
-use \Glami\Webpay\PaymentResponse;
-use \Glami\Webpay\Exception;
+use \Glami\GpWebpay\PaymentResponse;
+use \Glami\GpWebpay\Exception;
  
 $response = new PaymentResponse(...); // fill response with response parameters (from request).
  

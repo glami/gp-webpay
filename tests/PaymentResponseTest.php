@@ -1,6 +1,8 @@
 <?php
 
-namespace Glami\Webpay;
+namespace Glami\GpWebpay\Tests;
+
+use Glami\GpWebpay\PaymentResponse;
 
 class PaymentResponseTest extends \PHPUnit_Framework_TestCase {
 
@@ -41,6 +43,7 @@ class PaymentResponseTest extends \PHPUnit_Framework_TestCase {
       $codes['prcode'],
       $codes['srcode'],
       'resultext',
+      null,
       'digest',
       'digest1'
     );

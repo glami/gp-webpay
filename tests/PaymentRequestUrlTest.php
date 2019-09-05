@@ -1,7 +1,11 @@
 <?php
 
-namespace Glami\Webpay;
+namespace Glami\GpWebpay\Tests;
 
+
+use Glami\GpWebpay\Api;
+use Glami\GpWebpay\PaymentRequest;
+use Glami\GpWebpay\Signer;
 
 class PaymentRequestUrlTest extends \PHPUnit_Framework_TestCase {
 

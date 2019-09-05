@@ -6,9 +6,14 @@
   "license": "MIT",
   "homepage": "https://github.com/glami/gp-webpay",
   "autoload": {
-    "classmap": [
-      "src"
-    ]
+    "psr-4": {
+      "Glami\\GpWebpay\\": "src"
+    }
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "Glami\\GpWebpay\\Tests\\": "tests"
+    }
   },
   "require": {
     "ext-openssl": "*"

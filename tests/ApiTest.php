@@ -1,11 +1,15 @@
 <?php
 
-namespace Glami\Webpay;
+namespace Glami\GpWebpay\Tests;
+
+use Glami\GpWebpay\Api;
+use Glami\GpWebpay\Signer;
+use Glami\GpWebpay\PaymentResponse;
 
 class ApiTest extends \PHPUnit_Framework_TestCase {
 
   public function testVerifyPaymentResponse() {
-    $response = $this->getMockBuilder('Glami\Webpay\PaymentResponse')
+    $response = $this->getMockBuilder(PaymentResponse::class)
       ->setConstructorArgs(
         [
           'operation',
@@ -29,7 +33,7 @@ class ApiTest extends \PHPUnit_Framework_TestCase {
       ->method('hasError')
       ->willReturn(false);
 
-    $signer = $this->getMockBuilder('Glami\\Webpay\\Signer')
+    $signer = $this->getMockBuilder(Signer::class)
       ->disableOriginalConstructor()
       ->setMethods(
         [
@@ -47,7 +51,7 @@ class ApiTest extends \PHPUnit_Framework_TestCase {
   }
 
   /**
-   * @expectedException \Glami\Webpay\PaymentResponseException
+   * @expectedException \Glami\GpWebpay\PaymentResponseException
    */
   public function testPaymentHasErrorInVerifyPaymentResponse() {
     $merchantNumber = 123456789;
@@ -77,6 +81,7 @@ class ApiTest extends \PHPUnit_Framework_TestCase {
       $params['PRCODE'],
       $params['SRCODE'],
       $params['RESULTTEXT'],
+      null,
       $digest,
       $digest1
     );

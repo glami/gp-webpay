@@ -1,6 +1,6 @@
 <?php
 
-namespace Glami\Webpay;
+namespace Glami\GpWebpay;
 
 class Exception extends \Exception {
 

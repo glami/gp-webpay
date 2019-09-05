@@ -1,11 +1,13 @@
 <?php
 
-namespace Glami\Webpay;
+namespace Glami\GpWebpay\Tests;
+
+use Glami\GpWebpay\Signer;
 
 class SignerTest extends \PHPUnit_Framework_TestCase {
 
   /**
-   * @expectedException \Glami\Webpay\SignerException
+   * @expectedException \Glami\GpWebpay\SignerException
    */
   public function testConstructorWithInvalidPrivateKey() {
     $signer = new Signer(
@@ -16,7 +18,7 @@ class SignerTest extends \PHPUnit_Framework_TestCase {
   }
 
   /**
-   * @expectedException \Glami\Webpay\SignerException
+   * @expectedException \Glami\GpWebpay\SignerException
    */
   public function testConstructorWithInvalidPublicKey() {
     $signer = new Signer(
@@ -78,7 +80,7 @@ class SignerTest extends \PHPUnit_Framework_TestCase {
   }
 
   /**
-   * @expectedException \Glami\Webpay\SignerException
+   * @expectedException \Glami\GpWebpay\SignerException
    */
   public function testVerifyWithInvalidDigest() {
     $params = array(
