@@ -6,7 +6,9 @@
   "license": "MIT",
   "homepage": "https://github.com/glami/gp-webpay-php-sdk",
   "autoload": {
-    "psr-0": { "Glami\\Webpay": "src/" }
+    "classmap": [
+      "src"
+    ]
   },
   "require": {
     "ext-openssl": "*"
