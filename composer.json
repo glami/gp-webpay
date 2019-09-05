@@ -1,10 +1,10 @@
 {
-  "name": "glami/webpay-php",
+  "name": "glami/gp-webpay",
   "description": "GP Webpay API Wrapper",
   "type": "library",
   "keywords": ["webpay", "php"],
   "license": "MIT",
-  "homepage": "https://github.com/glami/gp-webpay-php-sdk",
+  "homepage": "https://github.com/glami/gp-webpay",
   "autoload": {
     "classmap": [
       "src"
