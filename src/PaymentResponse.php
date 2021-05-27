@@ -21,10 +21,12 @@ class PaymentResponse {
    * @param int $srcode
    * @param string $resulttext
    * @param string|null $token
+   * @param string|null $tokenregstatus
    * @param string $digest
    * @param string $digest1
+   * @param string $expiration
    */
-  public function __construct($operation, $ordernumber, $merordernum, $prcode, $srcode, $resulttext, $token, $digest, $digest1) {
+  public function __construct($operation, $ordernumber, $merordernum, $prcode, $srcode, $resulttext, $token, $tokenregstatus, $digest, $digest1, $expiration) {
     $this->params['operation'] = $operation;
     $this->params['ordermumber'] = $ordernumber;
     if ($merordernum !== NULL) {
@@ -36,8 +38,20 @@ class PaymentResponse {
     if ($token !== NULL) {
       $this->params['token'] = $token;
     }
+    if ($expiration) {
+      $this->params['expiry'] = $expiration;
+    }
+    if (isset($tokenregstatus)) {
+      $this->params['tokenregstatus'] = $tokenregstatus;
+    }
+
     $this->digest = $digest;
     $this->digest1 = $digest1;
+  }
+
+  public function getCardExpiration(): ?\DateTime
+  {
+    return !isset($this->params['expiry']) ? null : new \DateTime(substr($this->params['expiry'], 0, 2) . '-' . substr($this->params['expiry'], 2, 2) . '-01');
   }
 
   /**
